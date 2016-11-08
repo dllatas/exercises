@@ -1,5 +1,7 @@
 var assert = require('assert');
-var update = require('./');
+var update = require('./index-compiled.js');
+
+update = update.default;
 
 describe('update', function() {
 
@@ -31,13 +33,9 @@ describe('update', function() {
       assert(state.a.b === state.a.b);
     });
 
-
   });
 
-
-
   describe("can pass react's test suite", function() {
-
 
     it('should support push', function() {
       assert.deepEqual(update([1], {$push: [7]}), [1, 7]);
@@ -61,6 +59,10 @@ describe('update', function() {
 
     it('should support apply', function() {
       assert.equal(update(2, {$apply: function(x) { return x * 2; }}), 4);
+    });
+
+    it('should support delete', function() {
+      assert.deepEqual(update({a: 'b', c: 'd', e: 'g'}, {$delete: ['a','c']}), {e: 'g'});
     });
 
     it('should support deep updates', function() {

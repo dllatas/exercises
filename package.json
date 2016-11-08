@@ -9,6 +9,7 @@
   "author": "Moshe Kolodny",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.16.0",
     "mocha": "^2.2.4",
     "sinon": "^1.15.3"
   }
