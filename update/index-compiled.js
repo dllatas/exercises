@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
 exports.default = update;
 function update(old, toChange) {
     if ((typeof toChange === 'undefined' ? 'undefined' : _typeof(toChange)) === 'object' && toChange !== null) {
@@ -54,6 +53,7 @@ function update(old, toChange) {
                 var _key2 = _step2.value;
 
                 var newValue = undefined;
+
                 if (_typeof(toChange[_key2]) === 'object' && toChange !== null) {
                     newValue = update(old[_key2], toChange[_key2]);
                 }
